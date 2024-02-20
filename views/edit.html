@@ -1,0 +1,21 @@
+<div>
+    <h1>{{title}}</h1>
+    <label for="">ID</label>
+    <input type="text" ng-model="inputValue.id" disabled>
+    <span ng-if="kiemTraDuLieu.id == true" style="color: red">Vui lòng nhập ID</span>
+    <label for="">Tên</label>
+    <input type="text" ng-model="inputValue.ten">
+    <span ng-if="kiemTraDuLieu.ten == true" style="color: red">Vui lòng nhập tên</span>
+    <label for="">Hãng</label>
+    <select ng-model="inputValue.hang">
+        <option value="SAMSUNG">SAMSUNG</option>
+        <option value="OPPO">OPPO</option>
+        <option value="APPLE">APPLE</option>
+    </select>
+    <span ng-if="kiemTraDuLieu.hang == true" style="color: red">Vui lòng nhập hãng</span>
+    <label for="">Giá</label>
+    <input type="text" ng-model="inputValue.gia">
+    <span ng-if="kiemTraDuLieu.gia == true" style="color: red">Vui lòng nhập giá</span>
+    <span ng-if="kiemTraDuLieu.giaLon == true" style="color: red">Vui lòng nhập giá lớn hơn 100</span>
+    <button ng-click = "editData()">Thêm</button>
+</div>

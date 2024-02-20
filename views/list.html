@@ -1,0 +1,29 @@
+<div>
+    <h1>{{title}}</h1>
+    <a href="#!/phone/add">
+        <button>Thêm</button>
+    </a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Hãng</th>
+            <th>Giá</th>
+            <th>Thao Tác</th>
+        </tr>
+        <tr ng-repeat = "item in listPhone">
+                <td>{{item.id}}</td>
+                <td>{{item.ten}}</td>
+                <td>{{item.hang}}</td>
+                <td>{{item.gia}}</td>
+                <td>
+                    <a href="#!/detail/phone/{{item.id}}">
+                    <button>Chi tiết</button>
+                    </a>
+                    <a href="#!/edit/phone/{{item.id}}">
+                    <button>Sửa</button>
+                    </a>
+                </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <main ng-view>
+
+    </main>
+    <script src="controller/ListPhoneController.js"></script>
+    <script src="controller/AddPhoneController.js"></script>
+    <script src="controller/DetailPhoneController.js"></script>
+    <script src="controller/EditPhoneController.js"></script>
+</body>
+<script>
+    let myApp = angular.module('myApp', ['ngRoute']);
+    myApp.config(function($routeProvider){
+        $routeProvider
+        .when(
+            '/list-phone',//route
+            {
+                templateUrl: 'views/list.html',
+                controller: ListPhoneController
+            }
+        )
+        .when(
+            '/phone/add',//route
+            {
+                templateUrl: 'views/add.html',
+                controller: AddPhoneController
+            }
+        )
+        .when(
+            '/detail/phone/:id',//route
+            {
+                templateUrl: 'views/detail.html',
+                controller: DetailPhoneController
+            }
+        )
+        .when(
+            '/edit/phone/:id',//route
+            {
+                templateUrl: 'views/edit.html',
+                controller: EditPhoneController
+            }
+        )
+    })
+</script>
+</html>
